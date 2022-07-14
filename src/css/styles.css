@@ -46,12 +46,14 @@ button {
     margin-right: 20px;
     float: left;
     margin-right: 2%;
-    color: white;
+    color: rgb(15, 14, 14);
+    font-size: 16px;
+    line-height: 1.5;
 }
 .view_port {
     position: fixed;
     top: 7px;
-    left: 60%;
+    left: 55%;
     overflow: hidden;
 }
 
@@ -89,7 +91,7 @@ button {
 
 button:hover {
     animation: animate125 2000ms infinite 10ms;
-    background-color: #2bbbad;
+    background-color: #17d5c2;
 }
 .load-more{
     margin: 0 auto;
