@@ -24,4 +24,4 @@ export class FetchImagesService {
         this.page = 1;
     }
 }
-export { FetchImagesService };
+// export { FetchImagesService };
