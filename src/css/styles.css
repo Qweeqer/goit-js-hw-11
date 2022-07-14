@@ -29,12 +29,30 @@ button {
     position: fixed;
     top: 0;
     left: 0;
+    height: 50px;
     width: 100%;
     display: flex;
-    background-color: #fff;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    align-items: center;
     padding-left: 10px;
+    background-color: black;
+        overflow: hidden;
+}
+.input-search{
+    position: fixed;
+    width: 50%;
+    height: 40px;
+    border-radius: 4px;
+    padding: 2px 10px;
+    margin-right: 20px;
+    float: left;
+    margin-right: 2%;
+    color: white;
+}
+.view_port {
+    position: fixed;
+    top: 7px;
+    left: 60%;
+    overflow: hidden;
 }
 
 button.is-hidden {
@@ -42,24 +60,28 @@ button.is-hidden {
 }
 
 button {
-    font-size: 16px;
-    line-height: 1.88;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 200px;
-    color: blue;
-    background-color: burlywood;
-    border: 1px solid transparent;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
-    margin-left: 20px;
-
-    padding-top: 5px;
-    padding-bottom: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
     cursor: pointer;
-    border-radius: 4px;
+    font-size: 1rem; 
+    outline: 0;
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
+    overflow: visible;
+    font: inherit;
+    margin: 0;
     transition-property: background-color, color, border;
     transition-duration: 500ms;
     transition-timing-function: linear;
@@ -67,17 +89,36 @@ button {
 
 button:hover {
     animation: animate125 2000ms infinite 10ms;
-    background-color: rgb(179, 136, 77);
-    color: rgb(9, 9, 51);
-    border: 1px solid rgb(9, 9, 51);
+    background-color: #2bbbad;
 }
+.load-more{
+    margin: 0 auto;
+    display: block;
+}
+/* ----------------------- */
+.cylon_eye {
+    background-color: red;
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+    color: white;
+    height: 100%;
+    width: 20%;
+    animation: 4s linear 0s infinite alternate move_eye;
+}
+@keyframes move_eye {
+    from {
+        margin-left: -20%;
+    }
 
+    to {
+        margin-left: 100%;
+    }
+}
+/* --------------------------------------- */
 .input-search {
-    width: 50%;
-    height: 40px;
-    border-radius: 4px;
-    padding: 2px 10px;
-    margin-right: 20px;
+    
 }
 
 .gallery {
