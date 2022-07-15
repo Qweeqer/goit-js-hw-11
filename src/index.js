@@ -1,4 +1,4 @@
-import './css/styles.css';
+// import './css/styles.css';
 import { PixabayAPI } from './js/pixabayAPI';
 import { LoadMoreBtn } from './js/loadMoreBtn';
 import { makeImageMarkup } from './js/markupService';
