@@ -1,89 +1,56 @@
 import axios from "axios";
-// const searchParams = new URLSearchParams({
-//   per_page: 40,
-//   API_KEY: '28612573-96fa08825695f2b47097a163d',
-// image_type: 'photo',
-// safesearch: 'true',
-//   orientation: 'portrait',
-// });
+
 axios.defaults.baseURL = 'https://pixabay.com/api';
-// axios.defaults.BASE_URL = 'https://pixabay.com/api';
-const PARAM = 'per_page=40&orientation=horizontal&image_type=photo&safesearch=true';
 
-export class pixabayAPI {
-  constructor(){
+export class PixabayAPI {
+    #BASE_URL = axios.defaults.baseURL;
+    #API_KEY = '28612573-96fa08825695f2b47097a163d';
+    #page;
+    searchQuery;
+      #searchParams = new URLSearchParams({
+        per_page: 40,
+        client_id: this.#API_KEY,
+        image_type: 'photo',
+        safesearch: 'true',
+        orientation: 'portrait',
+      });
+        constructor() {
+        this.#page = 1;
         this.searchQuery = '';
-        this.page = 1;
-    }
-// BASE_URL = 'https://pixabay.com/api';
-// #API_KEY = '28612573-96fa08825695f2b47097a163d';
-// #page;
-// #query;
-
-//   #searchParams = new URLSearchParams({
-//     per_page: 40,
-//     client_id: this.#API_KEY,
-//     image_type: 'photo',
-// safesearch: 'true',
-//   orientation: 'portrait',
-//   });
-//     constructor() {
-//     this.#page = 1;
-//     this.#query = '';
-//     }
+        }
     
-    async fetchImages () {
-        try{
-            const response = await axios.get(`/?key=${API_KEY}&q=${this.searchQuery}&page=${this.page}&${PARAM}`);
+    async fetchImages() {
+        try {
+            const response = await axios.get(`/?key=${this.#API_KEY}&q=${this.searchQuery}&page=${this.#page}&${this.#searchParams}`);
             this.incrementPage();
-            return response;        
+            return response;
         } catch (error) {
             console.log(error);
         }
-  }
-  incrementPage() {
-        this.page += 1;
+    }
+    incrementPage() {
+        this.#page += 1;
     }
 
     resetPage() {
-        this.page = 1;
+        this.#page = 1;
     }
-    
-  //   get page() {
-  //   return this.#page;
-  // }
+        get page() {
+    return this.#page;
+  }
 
-  // set page(newPage) {
-  //   this.#page = newPage;
-  // }
-
-  // updadePage() {
-  //   this.#page += 1;
-  // }
-
-  // set query(newQuery) {
-  //   this.#query = newQuery;
-  // }
-// -----------------------------------------------------------------    
-//     async fetchImages () {
-//         try{
-//             const response = await axios.get(`/?key=${API_KEY}&q=${this.#query}&page=${this.page}&${this.#searchParams}`);
-//             this.incrementPage();
-//             return response;        
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     }
-//     incrementPage() {
-//         this.page += 1;
-//     }
-//     resetPage() {
-//         this.page = 1;
-//     }
+  set page(newPage) {
+    this.#page = newPage;
+    }
+    set searchQuery(newQuery) {
+    this.searchQuery = newQuery;
+  }
 }
+   
 
 
-// ----------------Чернетка ---------------------------
+
+// ----------------Чернетка ---------10-2------------------
 // const searchParams = new URLSearchParams({
 //   per_page: 30,
 //   client_id: 'LxvKVGJqiSe6NcEVZOaLXC-f2JIIWZaq_o0WrF8mwJc',
