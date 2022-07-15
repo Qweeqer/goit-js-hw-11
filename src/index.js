@@ -78,7 +78,7 @@ function appendImagesMarkup(data) {
 refs.form.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', fetchImages);
 // -------------------------------------------------------------
-// //  З интернета спробувати прокрутка сторінки після запиту та малювання кожної наступної групи зображень//
+// //  прокрутка сторінки після запиту та малювання кожної наступної групи зображень//
 function onPageScrolling() {
   const { height: cardHeight } =
     refs.list.firstElementChild.getBoundingClientRect();

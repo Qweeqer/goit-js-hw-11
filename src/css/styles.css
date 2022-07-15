@@ -165,3 +165,16 @@ button:hover {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 border-radius: 2px;
 }
+/* -----------Simple--lightbox------ */
+button.sl-close,
+button.sl-prev, 
+button.sl-next{
+    background-color: #26a69a;
+    border-radius: 10px;
+    text-align: center;
+}
+button.sl-close:hover,
+button.sl-prev:hover,
+button.sl-next:hover{
+background-color: #17d5c2;
+}
