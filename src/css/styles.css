@@ -19,6 +19,7 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+object-fit: cover;
 }
 
 button {
@@ -49,6 +50,7 @@ button {
     color: rgb(15, 14, 14);
     font-size: 16px;
     line-height: 1.5;
+    outline-color: #32a1ce;
 }
 .view_port {
     position: fixed;
@@ -122,11 +124,11 @@ button:hover {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
     padding: 0;
     margin: 0;
-    max-width: calc(100vw - 80px);
+    max-width: calc(100vw - 30px);
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
@@ -136,20 +138,27 @@ button:hover {
     display: flex;
     flex-wrap: nowrap;
     align-content: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .info-item {
     text-align: center;
+    font-size: 10px;
 }
 
-.info-item:not(:last-child) {
+/* .info-item:not(:last-child) {
     margin-right: 15px;
-}
+} */
 
 .gallery img {
     display: block;
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+.photo-card{
+    background-color: #17d5c2a1;
+        /* box-shadow: 6px 7px 7px 0px; */
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+border-radius: 2px;
 }
