@@ -43,6 +43,7 @@ function fetchImages() {
         Notify.info(
           `Sorry, there are no images matching your search query: ${pixabayAPI.searchQuery}. Please try again.`
         );
+
         loadMoreBtn.hide();
         return;
       }
