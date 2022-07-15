@@ -59,7 +59,6 @@ function fetchImages() {
       if (pixabayAPI.page === 1) {
         // console.log(pixabayAPI.page);
         loadMoreBtn.disabled();
-        LabelLoadMore.hide();
         Notify.success(`Hooray! We found ${totalHits} images.`);
       }
       if (pixabayAPI.page >= 1 && totalHits > 40) {
