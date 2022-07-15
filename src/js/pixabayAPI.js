@@ -1,54 +1,57 @@
-import axios from "axios";
+import axios from 'axios';
 
 axios.defaults.baseURL = 'https://pixabay.com/api';
 
 export class PixabayAPI {
-    #BASE_URL = axios.defaults.baseURL;
-    #API_KEY = '28612573-96fa08825695f2b47097a163d';
-    #page;
-    searchQuery;
-      #searchParams = new URLSearchParams({
-        per_page: 40,
-        client_id: this.#API_KEY,
-        image_type: 'photo',
-        safesearch: 'true',
-        orientation: 'portrait',
-      });
-        constructor() {
-        this.#page = 1;
-        this.searchQuery = '';
-        }
-    
-    async fetchImages() {
-        try {
-            const response = await axios.get(`/?key=${this.#API_KEY}&q=${this.searchQuery}&page=${this.#page}&${this.#searchParams}`);
-            this.incrementPage();
-            return response;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    incrementPage() {
-        this.#page += 1;
-    }
+  #BASE_URL = axios.defaults.baseURL;
+  #API_KEY = '28612573-96fa08825695f2b47097a163d';
+  #page;
+  #searchQuery;
+  #searchParams = new URLSearchParams({
+    per_page: 40,
+    client_id: this.#API_KEY,
+    image_type: 'photo',
+    safesearch: 'true',
+    orientation: 'portrait',
+  });
+  constructor() {
+    this.#page = 1;
+    this.#searchQuery = '';
+  }
 
-    resetPage() {
-        this.#page = 1;
+  async fetchImages() {
+    try {
+      console.log('page', this.#page);
+      const response = await axios.get(
+        `/?key=${this.#API_KEY}&q=${this.#searchQuery}&page=${this.#page}&${
+          this.#searchParams
+        }`
+      );
+      return response;
+    } catch (error) {
+      console.log(error);
     }
-        get page() {
+  }
+  incrementPage() {
+    this.#page += 1;
+  }
+  resetPage() {
+    this.#page = 0;
+  }
+  get page() {
     return this.#page;
   }
 
   set page(newPage) {
     this.#page = newPage;
-    }
-    set searchQuery(newQuery) {
-    this.searchQuery = newQuery;
+  }
+  get searchQuery() {
+    return this.#searchQuery;
+  }
+  set searchQuery(newQuery) {
+    this.#searchQuery = newQuery;
   }
 }
-   
-
-
 
 // ----------------Чернетка ---------10-2------------------
 // const searchParams = new URLSearchParams({
