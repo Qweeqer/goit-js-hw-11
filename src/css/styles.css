@@ -30,7 +30,7 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    height: 50px;
+    height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -39,12 +39,13 @@ button {
         overflow: hidden;
 }
 .input-search{
+    top: 10px;
     position: fixed;
-    width: 50%;
+    margin-left: 25%;
+    width: 25%;
     height: 40px;
     border-radius: 4px;
     padding: 2px 10px;
-    margin-right: 20px;
     float: left;
     margin-right: 2%;
     color: rgb(15, 14, 14);
@@ -54,8 +55,8 @@ button {
 }
 .view_port {
     position: fixed;
-    top: 7px;
-    left: 55%;
+    top: 12px;
+    left: 52%;
     overflow: hidden;
 }
 
