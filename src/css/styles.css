@@ -54,13 +54,14 @@ button {
     line-height: 1.5;
     outline-color: #32a1ce;
 }
+/* ----------ceylon eye------- */
 .view_port {
     position: fixed;
     top: 12px;
-    left: 52%;
+    left: 55%;
     overflow: hidden;
 }
-
+/* ---------------------------------- */
 button.is-hidden {
     display: none;
 }
