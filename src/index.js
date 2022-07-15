@@ -1,4 +1,4 @@
-// import './css/styles.css';
+import './css/styles.css';
 import { PixabayAPI } from './js/pixabayAPI';
 import { LoadMoreBtn } from './js/loadMoreBtn';
 import { makeImageMarkup } from './js/markupService';
@@ -33,7 +33,6 @@ function clearImageContainer() {
   refs.list.innerHTML = '';
 }
 function fetchImages() {
-  // pixabayAPI.incrementPage(); ?????
   loadMoreBtn.disabled();
   pixabayAPI.incrementPage();
   pixabayAPI
@@ -50,8 +49,6 @@ function fetchImages() {
       appendImagesMarkup(data);
       onPageScrolling();
       lightbox.refresh();
-      // const totalPages = totalHits / 40
-      // console.log(totalHits);
       const { totalHits } = data;
       if (refs.list.children.length === totalHits) {
         Notify.info(
@@ -60,12 +57,9 @@ function fetchImages() {
         loadMoreBtn.hide();
       }
       if (pixabayAPI.page === 1) {
-        console.log(pixabayAPI.page);
-        console.log(pixabayAPI.page === 1);
-        console.log(totalHits);
-        console.log(totalHits <= 40);
+        // console.log(pixabayAPI.page);
         loadMoreBtn.disabled();
-
+        LabelLoadMore.hide();
         Notify.success(`Hooray! We found ${totalHits} images.`);
       }
       if (pixabayAPI.page >= 1 && totalHits > 40) {

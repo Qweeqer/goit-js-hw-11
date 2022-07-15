@@ -63,7 +63,9 @@ button {
 button.is-hidden {
     display: none;
 }
-
+/* .load-more.is-hidden {
+    display: none;
+} */
 button {
     text-decoration: none;
     color: #fff;
