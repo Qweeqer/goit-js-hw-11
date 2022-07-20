@@ -21,7 +21,9 @@
     "axios": "^0.26.0",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.4",
-    "simplelightbox": "^2.10.2"
+    "simple-lightbox": "^2.1.0",
+    "simplelightbox": "^2.10.2",
+    "uikit": "^3.15.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
