@@ -8,6 +8,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { getRefs } from './js/getRefs';
 
 const refs = getRefs();
+
 const pixabayAPI = new PixabayAPI();
 const loadMoreBtn = new LoadMoreBtn({
   rootSelektor: '.load-more',
@@ -17,6 +18,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
+
 function onSearch(e) {
   e.preventDefault();
   const currentWord = e.currentTarget.elements.searchQuery.value.trim();
@@ -39,7 +41,7 @@ function fetchImages() {
     .fetchImages()
     .then(({ data }) => {
       if (data.total === 0) {
-        console.log(pixabayAPI.searchQuery);
+        // console.log(pixabayAPI.searchQuery);
         Notify.info(
           `Sorry, there are no images matching your search query: ${pixabayAPI.searchQuery}. Please try again.`
         );
@@ -58,14 +60,11 @@ function fetchImages() {
         loadMoreBtn.hide();
       }
       if (pixabayAPI.page === 1) {
-        // console.log(pixabayAPI.page);
         loadMoreBtn.disabled();
         Notify.success(`Hooray! We found ${totalHits} images.`);
       }
       if (pixabayAPI.page >= 1 && totalHits > 40) {
-        console.log(pixabayAPI.page);
         loadMoreBtn.enable();
-        // Notify.success(`Hooray! We found ${totalHits} images.`);
       }
     })
     .catch(handleError);
