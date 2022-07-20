@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://pixabay.com/api';
-
+// -------------------video------
+// axios.defaults.baseURL = 'https://pixabay.com/api/videos';
+// ---------------------------------------------------------------
 export class PixabayAPI {
   #BASE_URL = axios.defaults.baseURL;
   #API_KEY = '28612573-96fa08825695f2b47097a163d';
@@ -14,6 +16,15 @@ export class PixabayAPI {
     safesearch: 'true',
     orientation: 'portrait',
   });
+  // -------------Відео----------------------
+  // #searchParams = new URLSearchParams({
+  //   per_page: 8,
+  //   client_id: this.#API_KEY,
+  //   video_type: 'all',
+  //   safesearch: 'true',
+  //   videos: 'tiny',
+  // });
+  // ------------------------------------------------
   constructor() {
     this.#page = 1;
     this.#searchQuery = '';
@@ -21,7 +32,7 @@ export class PixabayAPI {
 
   async fetchImages() {
     try {
-      console.log('page', this.#page);
+      // console.log('page', this.#page);
       const response = await axios.get(
         `/?key=${this.#API_KEY}&q=${this.#searchQuery}&page=${this.#page}&${
           this.#searchParams
